@@ -24,14 +24,24 @@ public class JdbcUserRepository implements UserRepository {
 	}
 	@Override
 	public UserData findOne(String userId) {
-		return jdbc.queryForObject("select userId, name, userPhone from UserData where userId=?",
-				this::mapRowToUserData, userId);
+		try{
+			return jdbc.queryForObject("select userId, name, userPhone from UserData where userId=?",
+					this::mapRowToUserData, userId);
+		}
+		catch(Exception e){
+			return null;
+		}
+		
 	}
 	@Override
-	public UserData save(UserData data) {
-		jdbc.update("insert into UserData (userId, name, userPhone) values (?, ?, ?)", data.getUserId(), data.getName(),
-				data.getUserPhone());
-		return data;
+	public int save(UserData data) {
+		try{
+			return jdbc.update("insert into UserData (userId, name, userPhone) values (?, ?, ?)", data.getUserId(), data.getName(),
+					data.getUserPhone());
+		}
+		catch(Exception e){
+			return 0;
+		}
 	}
 	private UserData mapRowToUserData(ResultSet rs, int rowNum) throws SQLException {
 		return new UserData(rs.getString("userId"), rs.getString("userPhone"), rs.getString("name"));

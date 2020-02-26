@@ -10,13 +10,23 @@ xmlns:th="http://www.thymeleaf.org">
 <h1>Create user</h1>
 <label for="name">Name: </label>
 <input type="text" th:field="*{name}"/>
+<span class="validationError"
+th:if="${#fields.hasErrors('name')}"
+th:errors="*{name}">Name Error</span>
 <br/>
 <label for="userPhone">Phone: </label>
 <input type="text" th:field="*{userPhone}"/>
+<span class="validationError"
+th:if="${#fields.hasErrors('userPhone')}"
+th:errors="*{userPhone}">Phone Error</span>
 <br/>
 <label for="userId">Enter User Id of your choice: </label>
 <input type="text" th:field="*{userId}"/>
+<span class="validationError"
+th:if="${#fields.hasErrors('userId')}"
+th:errors="*{userId}">User Id Error</span>
 <br/>
+<span class="validationError" th:text="${message}"></span>
 <br/>
 <button type="submit">Submit</button>
 </form>

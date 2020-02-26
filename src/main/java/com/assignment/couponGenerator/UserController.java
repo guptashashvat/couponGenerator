@@ -3,9 +3,12 @@ package com.assignment.couponGenerator;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -48,7 +51,7 @@ public class UserController {
 	}
 	@GetMapping("/userLogin")
 	public String userLogin(@RequestParam(value = "userId", required = false) String userId){
-		return "redirect:"+userId;
+		return "redirect:/"+userId;
 	}
 	@GetMapping("/merchantPage")
 	public String merchantPage(Model model){
@@ -68,16 +71,27 @@ public class UserController {
 		return "redirect:"+userId;
 	}
 	@PostMapping
-	public String userCreate(@ModelAttribute UserData userData){
-		userRepo.save(userData);
-		return "redirect:"+userData.getUserId();
+	public String userCreate(@ModelAttribute @Valid UserData userData, Errors errors, Model model){
+		if(errors.hasErrors()){
+			return "createUser";
+		}
+		if(userRepo.save(userData)==0){
+			model.addAttribute("message", "User Id entered already exist. Please choose a different one.");
+			return "createUser";
+		}
+		return "redirect:user/"+userData.getUserId();
 	}
 	@GetMapping("/{param1}")
 	public String userPage(@PathVariable(value = "param1") String param1, Model model){
 		userId=param1;
 		assignedCoupon=new ArrayList<>();
+		UserData userData=userRepo.findOne(param1);
+		if(userData==null){
+			model.addAttribute("message", "User Id entered doesn't exist");
+			return "existingUser";
+		}
 		couponRepo.findAssignedCoupons(param1).forEach(j->assignedCoupon.add(j));
-		model.addAttribute("userData", userRepo.findOne(param1));
+		model.addAttribute("userData", userData);
 		model.addAttribute("assignedCoupon", assignedCoupon);
 		return "userPage";
 	}

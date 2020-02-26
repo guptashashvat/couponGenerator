@@ -10,6 +10,7 @@ xmlns:th="http://www.thymeleaf.org">
 <h1>User Login</h1>
 <label for="userId">Enter your UserId: </label>
 <input type="text" th:name="userId"/>
+<span class="validationError" th:text="${message}"></span>
 <br/>
 <br/>
 <button type="submit">Submit</button>

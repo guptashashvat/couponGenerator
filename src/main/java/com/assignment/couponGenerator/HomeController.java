@@ -24,7 +24,7 @@ public class HomeController {
 		else if(login.equalsIgnoreCase("newUser"))
 			return "redirect:user";
 		else if(login.equalsIgnoreCase("existingUser"))
-			return "redirect:user/existingUser";
+			return "redirect:/user/existingUser";
 		else if(login.equalsIgnoreCase("addMerchant"))
 			return "redirect:merchants/newMerchant";
 		else if(login.equalsIgnoreCase("merchantList"))
