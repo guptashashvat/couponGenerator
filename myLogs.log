@@ -1,0 +1,16 @@
+2020-02-26 12:37:32,386 INFO com.assignment.couponGenerator.CouponGeneratorApplicationTests [main] Starting CouponGeneratorApplicationTests on NGZ764 with PID 6044 (started by shashvat.gupta in D:\eclipse\Workspace\couponGenerator)
+2020-02-26 12:37:32,394 DEBUG com.assignment.couponGenerator.CouponGeneratorApplicationTests [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-26 12:37:32,395 INFO com.assignment.couponGenerator.CouponGeneratorApplicationTests [main] No active profile set, falling back to default profiles: default
+2020-02-26 12:37:33,873 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-02-26 12:37:34,080 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-02-26 12:37:35,548 INFO com.assignment.couponGenerator.CouponGeneratorApplicationTests [main] Started CouponGeneratorApplicationTests in 3.49 seconds (JVM running for 5.117)
+2020-02-26 12:37:36,431 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-02-26 12:37:36,438 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-02-26 12:39:08,565 INFO com.assignment.couponGenerator.CouponGeneratorApplicationTests [main] Starting CouponGeneratorApplicationTests on NGZ764 with PID 7016 (started by shashvat.gupta in D:\eclipse\Workspace\couponGenerator)
+2020-02-26 12:39:08,566 DEBUG com.assignment.couponGenerator.CouponGeneratorApplicationTests [main] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-26 12:39:08,567 INFO com.assignment.couponGenerator.CouponGeneratorApplicationTests [main] No active profile set, falling back to default profiles: default
+2020-02-26 12:39:10,077 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-02-26 12:39:10,333 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-02-26 12:39:12,091 INFO com.assignment.couponGenerator.CouponGeneratorApplicationTests [main] Started CouponGeneratorApplicationTests in 4.252 seconds (JVM running for 5.837)
+2020-02-26 12:39:12,716 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-02-26 12:39:12,721 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.

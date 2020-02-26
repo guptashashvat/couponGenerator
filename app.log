@@ -1,0 +1,23 @@
+2020-02-24 01:33:56,189 INFO com.assignment.couponGenerator.CouponGeneratorApplication [restartedMain] Starting CouponGeneratorApplication on NGZ764 with PID 4012 (D:\eclipse\Workspace\couponGenerator\target\classes started by shashvat.gupta in D:\eclipse\Workspace\couponGenerator)
+2020-02-24 01:33:56,191 DEBUG com.assignment.couponGenerator.CouponGeneratorApplication [restartedMain] Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-24 01:33:56,192 INFO com.assignment.couponGenerator.CouponGeneratorApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-02-24 01:33:56,456 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-02-24 01:33:56,456 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-02-24 01:33:56,470 INFO org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-02-24 01:33:56,526 INFO org.apache.catalina.core.StandardService [restartedMain] Stopping service [Tomcat]
+2020-02-24 01:33:56,528 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [restartedMain] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2020-02-24 01:33:56,744 INFO com.zaxxer.hikari.HikariDataSource [Thread-73] HikariPool-16 - Shutdown initiated...
+2020-02-24 01:33:56,747 INFO com.zaxxer.hikari.HikariDataSource [Thread-73] HikariPool-16 - Shutdown completed.

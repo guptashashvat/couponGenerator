@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<title>Couponer</title>
+<link rel="stylesheet" th:href="@{/styles.css}" />
+<script>
+function mapCoupon(userId, couponId){
+	console.log("userId: "+userId);
+	console.log("couponId: "+couponId);
+	 $.ajax({
+	        type: "POST",
+	        contentType: "application/json",
+	        url: "/admin/assign",
+	        data: JSON.stringify({"userId": userId, "couponId": couponId}),
+	        dataType: 'json',
+	        cache: false,
+	        success: function (data) {
+	        	console.log("Success");
+	            console.log(data);
+	            if(data==1)
+		            location.reload();
+	        },
+	        error: function (e) {
+
+	        	console.log("Error");
+	            console.log(e);
+
+	        }
+	    });
+}
+</script>
+</head>
+<body>
+<h1>Admin Page</h1>
+<br/>
+<button onclick="location.href='admin/generateCoupon'" th:if="${utilityFlag}">Start Coupon Generator Utility</button>
+<h3>Assign these active Coupons to Users' phone numbers here:</h3>
+<table>
+<tr>
+<th>Coupon ID</th>
+<th>Amount</th>
+<th>Users' Phone List</th>
+<th>Assign</th>
+</tr>
+<tr th:each="x : ${activeCoupon}">
+<td th:text="${x.couponId}" th:name="couponId" th:value="${x.couponId}" th:data-couponId="${x.couponId}"></td>
+<td th:text="${x.amount}"></td>
+<td><select th:id="${x.couponId}">
+<option th:each="y : ${userData}" th:value="${y.userId}" th:text="${y.userPhone}">User Phone</option>
+</select></td>
+<td><button th:data-parameter1="${x.couponId}" onclick="callMapCoupon(this.getAttribute('data-parameter1'))">Assign</button></td>
+<script>
+    function callMapCoupon(couponId){
+    	var userId = document.getElementById(couponId).value;
+        console.log("userId: "+userId);
+        console.log("couponId: "+couponId);
+        mapCoupon(userId, couponId);
+        }
+</script>
+</tr>
+</table>
+<br/>
+<br/>
+<h3>All Coupons:</h3>
+<table>
+<tr>
+<th>Coupon ID</th>
+<th>Start Date</th>
+<th>End Date</th>
+<th>Status</th>
+<th>Amount</th>
+</tr>
+<tr th:each="x : ${couponData}">
+<td th:text="${x.couponId}"></td>
+<td th:text="${x.startDate}"></td>
+<td th:text="${x.endDate}"></td>
+<td th:text="${x.status}"></td>
+<td th:text="${x.amount}"></td>
+</tr>
+</table>
+<br/>
+<br/>
+<h3>Coupons' Mapping:</h3>
+<table>
+<tr>
+<th>Coupon ID</th>
+<th>User ID</th>
+</tr>
+<tr th:each="x : ${couponMapping}">
+<td th:text="${x.couponId}"></td>
+<td th:text="${x.userId}"></td>
+</tr>
+</table>
+</body>
+</html>
+

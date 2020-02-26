@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>New Merchant</title>
+<link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<form method="POST" th:object="${merchantData}">
+<h1>Add new merchant</h1>
+<label for="name">Name: </label>
+<input type="text" th:field="*{merchantName}"/>
+<br/>
+<label for="userId">Enter Merchant Id of your choice: </label>
+<input type="text" th:field="*{merchantId}"/>
+<br/>
+<br/>
+<button type="submit">Submit</button>
+</form>
+</body>
+</html>

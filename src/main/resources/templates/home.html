@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Coupon Handler</title>
+<link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<h1>How do you want to see the application?</h1>
+  <form th:action="@{/loginPage}">
+  <input type="radio" id="admin" th:name="login" th:value="admin">
+  <label for="admin">Admin</label>
+  <br/>
+  <input type="radio" id="existingUser" th:name="login" th:value="existingUser">
+  <label for="existingUser">Existing User</label>
+  <br/>
+  <input type="radio" id="newUser" th:name="login" th:value="newUser">
+  <label for="newUser">New User</label>
+  <br/>
+  <input type="radio" id="addMerchant" th:name="login" th:value="addMerchant">
+  <label for="addMerchant">Add Merchant</label>
+  <br/>
+  <input type="radio" id="merchantList" th:name="login" th:value="merchantList">
+  <label for="merchantList">See Merchant List</label>
+  <br/>
+  <br/>
+  <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

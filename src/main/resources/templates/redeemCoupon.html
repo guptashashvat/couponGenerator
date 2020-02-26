@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Redeem Coupon</title>
+<link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<form th:action="@{redeemCoupon}">
+<h1>Redeem Coupon here:</h1>
+<label for="userId">Enter Coupon Id: </label>
+<input type="text" th:name="couponId"/>
+<br/>
+<br/>
+<button type="submit">Submit</button>
+</form>
+</body>
+</html>

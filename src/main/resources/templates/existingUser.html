@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>User Login</title>
+<link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<form th:action="@{/userLogin}">
+<h1>User Login</h1>
+<label for="userId">Enter your UserId: </label>
+<input type="text" th:name="userId"/>
+<br/>
+<br/>
+<button type="submit">Submit</button>
+</form>
+</body>
+</html>

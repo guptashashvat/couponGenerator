@@ -1,0 +1,114 @@
+body{
+	font-family: cabin_regular;
+	font-size: 14px;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: cabin_bold!important;
+}
+label{
+	color: black;
+	font-size: 14px;
+ 	font-family: proxima_nova_light;
+}
+input[type="text"], input[type="search"], input[type="number"], input[type="email"], input[type="date"], input[type="password"],input[type="image"]{
+	box-sizing: border-box !important;
+	font-size: 12px;
+	/* width: 100%; */
+	border: 1px solid black;
+	border-radius: 4px;
+	height: 25px;
+	padding: 6px 12px;
+	font-family: proxima_nova_light;
+}
+select{
+	font-size: 12px;
+	/* width: 100%; */
+	border: 1px solid black;
+	border-radius: 4px;
+	height: 25px;
+	font-family: proxima_nova_light;
+}
+select>option{
+	background-color:#0097A9;
+	color:white;
+	font-family: proxima_nova_regular!important;
+}
+table td:first-child {
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.4em;
+}
+
+table td {
+    text-align: center;
+    padding: 3px 10px !important;
+    color:black;
+	border-collapse: collapse;
+	font-size: 12px;
+	outline: none !important;
+}
+table th{
+	height:25px;
+	border-collapse: collapse;
+	background-attachment:scroll;
+	background-clip:border-box;
+	background-color:#77c7de;
+	background-origin:padding-box;
+	background-position-x:50%;
+	background-position-y:50%;
+	background-size:auto;
+	background-width:50px;
+	color:black;
+	padding: 3px 10px !important;
+	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif !important;
+	font-size: 12px;
+}
+tr {
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+button {
+background-color: #57c7db;
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+button:focus,
+button:active:focus{
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline: 5px auto -moz-focus-ring-color;
+  outline: 5px auto -ms-focus-ring-color;
+  outline: 5px auto focus-ring-color;
+  outline-offset: -2px;
+}
+button:hover,
+button.focus {
+  color: #333;
+  text-decoration: none;
+}
+button:active{
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+  -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+  -ms-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+   box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}

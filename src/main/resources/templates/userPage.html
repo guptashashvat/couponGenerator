@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>User Page</title>
+<link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<h1>User Data</h1><br/>
+<label for="name">Name: </label>
+<span th:text="${userData.name}">Coupon Id</span>
+<br/>
+<label for="userPhone">Phone: </label>
+<span th:text="${userData.userPhone}">Coupon Id</span>
+<br/>
+<label for="userId">User Id: </label>
+<span th:text="${userData.userId}">Coupon Id</span>
+<br/>
+<br/>
+<h1>The following are the coupons assigned to you:</h1>
+<table border="1">
+<tr>
+<th>Coupon ID</th>
+<th>End Date</th>
+<th>Amount</th>
+</tr>
+<tr th:each="x : ${assignedCoupon}">
+<td th:text="${x.couponId}"></td>
+<td th:text="${x.endDate}"></td>
+<td th:text="${x.amount}"></td>
+</tr>
+</table>
+<br/>
+<p><b>Note:</b> You can redeem your coupons on merchant page by entering your coupon code after selecting desired merchant.</p>
+<br/>
+<button onclick="location.href='merchantPage'">Go to merchant page</button>
+</body>
+</html>

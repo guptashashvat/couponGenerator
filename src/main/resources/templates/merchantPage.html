@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Merchants</title>
+<link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<h3>All Merchants:</h3>
+<table border="1">
+<tr>
+<th th:if="${isSelect}">Select</th>
+<th>Merchant ID</th>
+<th>Merchant Name</th>
+</tr>
+<tr th:each="x : ${merchantList}">
+<td th:if="${isSelect}"><input type="radio"></td>
+<td th:text="${x.merchantId}"></td>
+<td th:text="${x.merchantName}"></td>
+</tr>
+</table>
+<br/>
+<br/>
+<button th:if="${isSelect}" onclick="location.href='redeemPage'">Redeem</button>
+</body>
+</html>
+
